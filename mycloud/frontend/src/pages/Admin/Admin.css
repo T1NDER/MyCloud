@@ -1,0 +1,103 @@
+.admin-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.admin-section {
+  margin-bottom: 2rem;
+}
+
+.admin-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--gray-900);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-back-btn {
+  margin-bottom: 1.5rem;
+}
+
+.admin-access-denied {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.admin-access-denied-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.admin-access-denied-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--danger-color);
+  margin-bottom: 0.5rem;
+}
+
+.admin-access-denied-text {
+  color: var(--gray-600);
+}
+
+.user-admin-badge {
+  background: var(--warning-color);
+  color: var(--white);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.user-regular-badge {
+  background: var(--gray-300);
+  color: var(--gray-700);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.storage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.storage-files-count {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.storage-size {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 1rem;
+  }
+}
