@@ -12,11 +12,7 @@ export const fileService = {
     formData.append("file", file);
     formData.append("comment", comment);
 
-    const response = await api.post("/files/upload/", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await api.post("/files/upload/", formData);
     return response.data;
   },
 
