@@ -59,14 +59,14 @@ export default function FileList({ userId = null}) {
   };
 
   const copyShareLink = (specialLink) => {
-    const fullLink = `http://localhost:8000/api/files/shared/${specialLink}/download/`;
+    const fullLink = `${window.location.origin}/api/files/shared/${specialLink}/download/`;
     navigator.clipboard.writeText(fullLink);
     alert('Ссылка скопирована в буфер обмена');
   };
 
   const downloadFile = async (fileId, filename) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/files/${fileId}/download/`, {
+      const response = await fetch(`/api/files/${fileId}/download/`, {
         method: 'GET',
         credentials: 'include',
       });

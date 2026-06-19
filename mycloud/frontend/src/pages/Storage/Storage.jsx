@@ -75,14 +75,14 @@ export default function Storage() {
   };
 
   const copyShareLink = (specialLink) => {
-    const fullLink = `api/files/shared/${specialLink}/download/`;
+    const fullLink = `${window.location.origin}/api/files/shared/${specialLink}/download/`;
     navigator.clipboard.writeText(fullLink);
     alert('Ссылка скопирована в буфер обмена');
   };
 
   const downloadFile = async (fileId, filename) => {
     try {
-      const response = await fetch(`api/files/${fileId}/download/`, {
+      const response = await fetch(`/api/files/${fileId}/download/`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -203,6 +203,7 @@ export default function Storage() {
                   <th>Имя файла</th>
                   <th>Размер</th>
                   <th>Загружен</th>
+                  <th>Последнее скачивание</th>
                   <th>Комментарий</th>
                   <th style={{ textAlign: 'center' }}>Действия</th>
                 </tr>
@@ -241,6 +242,9 @@ export default function Storage() {
                     </td>
                     <td>{formatFileSize(file.file_size)}</td>
                     <td className="text-small">{formatDate(file.upload_date)}</td>
+                    <td className="text-small">
+                      {file.last_download_date ? formatDate(file.last_download_date) : '—'}
+                    </td>
                     <td>
                       <div className="file-comment" title={file.comment}>
                         {file.comment || <span className="text-muted">—</span>}
